@@ -1,0 +1,30 @@
+
+<%- include("header"); -%>
+    <div class="box" id="heading">
+        <h1><%= listName %>!</h1>
+    </div>
+    
+    <div class="box">
+        <% addedItem.forEach(function(records){ %>
+            <!-- form route that delete items -->
+            <form action="/delete" method="post">
+                <div class="item">
+                    <!-- retrieve the value of the key checkbox as record._id -->
+                    <input type="checkbox" name= "checkbox" value="<%= records._id %>" onChange="this.form.submit()">
+                    <p> <%= records.name %> </p>
+                </div>
+                <input type="hidden" name= "listTitle" value="<%= listName %>">
+            </form> 
+
+            <%}) %>
+               
+            <!--  form route that add new item-->
+            <form class="item" action="/" method="post">
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                <!-- retrieve the value of the key workList as listName b asigning the value -->
+                <button type="submit" name="pathList" value="<%= listName %>">+</button>
+            </form>
+          
+    </div>
+
+    <%- include('footer'); -%>
