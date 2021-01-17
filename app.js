@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 
 
 // create mongoose database and connection to url and database
-mongoose.connect("mongodb://localhost:27017/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
+mongoose.connect("mongodb+srv://amazing-admin:Test-123@cluster0.u4noh.mongodb.net/todoListDB", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true});
 
 // create databse todolistDB document schema
 const itemSchema = {name: String};
